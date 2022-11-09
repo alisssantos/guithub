@@ -1,23 +1,13 @@
-metros = float(input('Digite o valor da área em metros quadrados: '))
-um_litro = 1
-tres_metros = 3
-x = 1
+cobertura_tinta = 3
+capacidade_lata = 18
+preco_lata = 80.0
 
+tamanho_area = float(input('Digite o tamanho da area a ser pintada em m²: '))
+litros = (tamanho_area / cobertura_tinta)
+latas_inteiras = int(litros/capacidade_lata)
+if(litros%capacidade_lata != 0):
+    latas_inteiras += 1
 
-#meio pelos extremos
+valor_total = (latas_inteiras * preco_lata)
 
-p1 = (um_litro*metros)
-p2 = (x*tres_metros)
-p3 = (p1/p2)
-print (f'o valor de litros que o cliente irá precisar é de {p3:0.2f}L')
-
-#condicional
-if p3 <= 18.9:
-    print(f'para pintar {metros}m² será necessário uma lata de 18L, o valor a ser pago é de R$80.00')
-elif p3 >= 19 and p3 <= 36.9:
-    print(f'para pintar {metros}m² será necessário duas latas de 18L, o valor a ser pago é de R$160.00')
-elif p3 >= 37 and p3 <= 54.9:
-    print(f'para pintar {metros}m² será necessário três latas de 18L, o valor a ser pago é de R$240.00')
-else:
-    print('complementar')
-
+print(f' quantidade de litros de tinta necessários: {litros},\n quantidade de latas de tinta necessárias: {latas_inteiras},\n Valor total da compra: {valor_total}.')
